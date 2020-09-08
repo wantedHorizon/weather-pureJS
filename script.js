@@ -7,6 +7,7 @@ let city = '';
 //set weather to api
 const displayWeather = (data) => {
     const weatherElement = document.querySelector('.weather');
+    
     city = data.name;
     console.log(data);
     const html = `       
@@ -18,6 +19,7 @@ const displayWeather = (data) => {
     <h4>Sunset: <span>${parseTime(data.sys.sunset)}</span></h3>`
 
     weatherElement.innerHTML = html;
+    weatherElement.removeAttribute('hidden');
 }
 
 const parseTime = (seconds) => {
