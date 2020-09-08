@@ -1,0 +1,63 @@
+.container {
+    max-width: 800px;
+    background: #333;
+    height: 95vh;
+    margin: 0 auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+/* popup-model */
+.popup {
+    background: hsla(0, 0%, 30%, 0.5);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    transition: all 0.25s;
+    top: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    --opacity: 0;
+    opacity: var(--opacity);
+}
+
+.popup fieldset {
+    background: var(--grey);
+
+    padding: 2rem;
+    border: 3px solid var(--pink);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    transition: all 0.2s;
+    --scale: 0.3;
+    text-align: center;
+    transform: scale(var(--scale));
+}
+
+.popup fieldset label {
+    display: block;
+    color: var(--red);
+    text-align: center;
+
+}
+
+.popup fieldset button {
+    font-size: 1rem;
+    display: inline;
+
+}
+
+.popup.open {
+    --opacity: 1;
+    pointer-events: all;
+}
+
+.popup.open fieldset {
+    --scale: 1;
+}
